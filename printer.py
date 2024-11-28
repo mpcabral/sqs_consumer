@@ -83,7 +83,7 @@ def send_tspl_command(dev, endpoint_out, command):
         else:
             print(f"Falha ao enviar comando '{line}' após múltiplas tentativas.")
 
-def print_tspl_label(dev, endpoint_out, name, surname, institution, qr_content):
+def print_tspl_label(dev, endpoint_out, name, surname, institution, qr_content, seq_id):
     """
     Envia dados específicos para impressão.
     """
@@ -98,6 +98,7 @@ def print_tspl_label(dev, endpoint_out, name, surname, institution, qr_content):
                 TEXT 50,20,"3",0,2,2,"{name}"
                 TEXT 50,80,"3",0,1,1,"{surname}"
                 TEXT 50,140,"3",0,1,1,"{institution}"
+                TEXT 50,250,"3",0,1,1,"{seq_id}"
                 QRCODE 270,110,L,6,A,0,"{qr_content}"
                 PRINT 1,1
         """

@@ -25,7 +25,7 @@ def print_data(dev, endpoint_out, body):
 
     print_tspl_label(dev, endpoint_out,
                     data["name"], data["surname"],
-                    data["institution"], data["qr_content"])
+                    data["institution"], data["qr_content"], data["seq_id"])
 
 
 if __name__ == "__main__":

@@ -39,6 +39,6 @@ def consume_sqs(name: str, wait_time: int, max_batch_size: int, process: callabl
                     except Exception as err:
                         logger.error(f"Error processing message: {err}")
 
-                logger.info(f"Batch Processed Count: {len(batch)}; Approximate queued messages: {queue.attributes["ApproximateNumberOfMessages"]}")
+                logger.info(f"Batch Processed Count: {len(batch)}; Approximate queued messages: {queue.attributes['ApproximateNumberOfMessages']}")
         except ClientError as error:
             logger.error(f"Failed to process message due to client error: {error}")
